@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
-import { Canciones } from '../../modulo/cancion.module'
-import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
+import { map, catchError, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -10,10 +10,21 @@ export class CancionesService {
   private url = "http://localhost:3000/api/canciones"/* variable privada que solo sirve en este modulo */
 
   constructor(private http: HttpClient) { }
+  private extractData(res: Response) {
+    let body = res;
+    return body || { };
+  }
 
-  /* Metodo GET */
-  getCanciones(): Observable<Canciones[]>{
-    return this.http.get<Canciones[]>(this.url)
+  /* Metodo GET para ROCK*/
+  getCanciones(): Observable<any>{
+    return this.http.get(this.url).pipe(
+      map(this.extractData));
+  }
+
+  /* Metodo GET para ROCK*/
+  getCancionesRock(): Observable<any>{
+    return this.http.get(this.url+"/genero/Rock").pipe(
+      map(this.extractData));
   }
 
    /* METODO POST*/

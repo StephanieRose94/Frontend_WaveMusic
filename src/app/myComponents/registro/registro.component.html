@@ -26,8 +26,8 @@
                 *ngIf="registerForm.get('password').hasError('required') && registerForm.get('password').touched ">Contraseña
                 requerida</small>
 
-            <button class="aceptar" [disabled]="registerForm.invalid" type="submit"> Registrate </button>
-
+            <button class="aceptar" type="submit"> Regístrate </button>
+            <!-- [disabled]="registerForm.invalid" -->
         </form>
     </div>
 </div>
