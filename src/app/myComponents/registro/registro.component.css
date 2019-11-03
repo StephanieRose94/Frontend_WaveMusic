@@ -1,0 +1,131 @@
+/* HEADER INICIAR SESIÓN */
+.headerRegistro{
+    display: grid;
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    align-items: center;
+    grid-template-columns: 5% 10% 35% 14% 14% 10% 15%;
+}
+.headerRegistro > img{
+    grid-column: 2/3;
+}
+.textoInciarSesion{
+    grid-column: 4/5;
+    width: 200px;
+    height: 40px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    color: #E50033;
+    background-color: #F2F2F2;
+    border-style: none;
+    border-radius: 15px;
+    text-align: center;
+}
+.textoCrearCuenta{
+    grid-column: 5/6;
+    width: 200px;
+    height: 40px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    color: #E50033;
+    background-color: #F2F2F2;
+    border-style: none;
+    border-radius: 15px;
+    text-align: center;
+}
+.botonEntrar{
+    grid-column: 6/7;
+    height: 40px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    color: white;
+    background-color: #E50033;
+    border-style: none;
+    border-radius: 15px;
+    align-items: center;
+}
+
+
+/* CONTENIDO REGISTRO */
+.contenidoFormulario{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    width: 100%;
+    height: 630px;
+    background-color: #E50033;
+    align-items: center;
+    justify-content: center;
+}
+.formulario{
+    display: grid;
+    grid-column: 4/6;
+    grid-template-rows: repeat(10, 1fr);
+    grid-template-columns: repeat(6, 17%);
+    width: 420px;
+    height: 420px;
+    font-family: 'Lato', sans-serif;
+    background-image: url(../../../assets/img/botones/cuadradoRegistro.png);
+    background-size: 420px;
+}
+.formulario > h3{
+    display: grid;
+    grid-row: 1/2;
+    grid-column: 2/4;
+    margin-left: 20%;
+    font-size: 32px;
+    color: #330033;
+}
+.formulario > form{
+    display: grid;
+    grid-row: 3/9;
+    grid-column: 3/6;
+    justify-content: space-around;
+}
+.formulario > form > input{
+    height: 30px;
+  background-color: #660033;
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  grid-column: 3/6;
+  border-style: none;
+}
+.cancelar{
+    width: 90px;
+    height: 35px;
+    background-color: #0F0033;
+    color: white;
+    border-radius: 10px;
+    grid-row:8/9;
+    grid-column: 3/4;
+    border-style: none;
+}
+.aceptar{
+    width: 90px;
+    height: 30px;
+    background-color: #E50033;
+    color: white;
+    border-radius: 10px;
+    grid-row: 8/9;
+    grid-column: 4/5;
+    border-style: none;
+}
+
+.error{
+    display: grid;
+    grid-column: 3/4;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+}
+
+
+
+/* FOOTER */
+.footerRegistro{
+    display: grid;
+    width: 100%;
+    height: 60px; 
+    background-color: #330033;
+} 

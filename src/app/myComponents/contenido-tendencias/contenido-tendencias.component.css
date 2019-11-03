@@ -1,0 +1,327 @@
+.contenedor{
+    width: 100%;
+    height: 800px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    grid-template-rows: auto auto 80px;
+    }
+    
+/* MENU */
+.menu{
+    display: grid;
+    grid-column: 1/2;
+    grid-row: 1/4;
+    width: 100%;
+    height: auto;  
+    background-color: #E50033;
+
+    grid-template-rows: 300px 300px;
+    }
+.perfil{
+    display: grid;
+    width: 100%;
+    height: auto;  
+    grid-row: 1/2;
+    justify-content: center;
+    padding-top: 40px;
+}
+.perfil>img{
+    display: grid;
+    width: 120px;
+    height: 120px;  
+    border-radius: 100px;
+    background-color: white;
+}
+.perfil>p{
+    display: grid;  
+    height: 70px;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.ventanas{
+    display: grid;
+    width: 100%;
+    height: auto;  
+    grid-row: 2/3;
+}
+.pagina{
+    display: grid;
+    width: 90%;
+    height: 65px;
+    color: #E50033;
+    background-color: #660033;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    text-align: center;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 23px;
+}
+.pagina2{
+    display: grid;
+    width: 90%;
+    height: 65px;
+    color: #E50033;
+    background-color: #0F0033;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    text-align: center;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 23px;
+}
+.paginaSeleccionada{
+    display: grid;
+    width: 90%;
+    height: 65px;
+    margin-left: 10%;
+    padding-left: 30px;
+    color: #E50033;
+    background-color: white;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 23px;
+}
+
+
+/* HEADER */
+.header{
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    width: 100%;
+    height: auto;  
+    background-color: #0F0033;
+}
+.barraHeader{
+    display: grid;
+    width: 100%;
+    height: 70px;
+    grid-template-columns: 55% 10% 35%;
+}
+.historialHeader{
+    display: grid;
+    grid-column: 1/2;
+    color: white;
+    height: 40px;
+    margin-top: 30px;
+    margin-left: 30px;
+    font-family: 'Raleway', sans-serif;
+    font-style: italic;
+    font-size: 16px;
+}
+.flechasHeader{
+    display: grid;
+    grid-column: 2/3;
+    justify-content: center;
+    align-items: center;
+}
+.buscadorHeader{
+    display: grid;
+    width: 360px;
+    height: 35px;
+    margin-top: 15px;
+    grid-column: 3/4;
+    background-color: #303060;
+    border-radius: 20px;
+    color: #8484A0;
+    font-family: 'Lato', sans-serif;
+    font-size: 19px;
+    text-align: center;
+    border-style: none;
+}
+.search{
+    display: grid;
+    grid-column: 3/4;
+}
+.contendorResultadoSearch{
+    display: flex;
+    position: absolute;
+    width: 230px;
+    background-color: #47477c;
+    right: 50px;
+    top: 60px;
+    color: #c1c1c7;
+    padding: 30px;
+    z-index: 3;
+}
+
+.slider {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+    top: 0;
+    grid-row: 2/3;
+  }
+  .slider ul {
+    display: flex;
+    padding: 0;
+    width: 800%;
+    height: auto;
+    animation: cambio 10s infinite alternate linear;
+  }
+  .slider li {
+    width: 100%;
+    list-style: none;
+  }
+  .slider img {
+    width: 100%;
+    height: 292px;
+  }
+  @keyframes cambio {
+    0% {
+      margin-left: 0;
+    }
+    20% {
+      margin-left: 0;
+    }
+    25% {
+      margin-left: -100%;
+    }
+    45% {
+      margin-left: -100%;
+    }
+    50% {
+      margin-left: -200%;
+    }
+    70% {
+      margin-left: -200%;
+    }
+    75% {
+      margin-left: -300%;
+    }
+    100% {
+      margin-left: -300%;
+    }
+  }
+
+
+
+/* CONTENIDO TENDENCIAS */
+.contenedorTendencias{
+    display: grid;
+    grid-row: 2/3;
+    width: 100%;
+    height: auto;
+    padding-top: 36px;
+}
+
+.contendorTendencias > ul, li {
+    padding: 0;
+    margin: 0;
+    list-style: none inside;
+}
+ul.slider {
+    position:relative; /*Necesitamos que el ul sea relativo*/
+}
+ul.slider li {
+    opacity: 0; /*Ocultamos todos los <li>*/
+    transition: opacity .5s;
+    position: absolute; /*Posicionamos en absoluto los <li>*/
+    left: 0px;
+    top: 0px;
+    margin:50px;
+    padding:50px;
+    border:2px solid red;
+    background:#fff;
+    
+}
+ul.slider li:first-child {
+    opacity: 1; /*Mostramos el primer <li>*/
+}
+ul.slider li:target {
+    opacity: 1; /*Mostramos el <li> al que apunta el enlace*/
+}
+nav {
+    position:relative;
+    top:200px;
+    left:50px;
+}
+
+.nom-slide{
+    display: flex;
+    background-color: crimson;
+    width: 300px;
+    height: 50px;
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    margin: auto;
+    margin-bottom: -20px;
+    position: relative;
+    z-index: 5;
+    align-items: center;
+    justify-content: center;
+}
+
+.sli{
+    width: 22%;
+    height: auto;
+    float: left;
+    margin: 10px;
+    text-align: center;
+    
+}
+
+.sli >h3{
+    font-family: 'Lato', sans-serif;
+    color: #e50033;
+    font-size: 21px;
+}
+
+.sli >p{
+    font-family: 'Raleway', sans-serif;
+    color:rgb(32, 32, 32);
+    margin-top: -10px;
+    font-size: 13px;
+}
+
+
+.sli >img{
+    width: 100%;
+    height: auto;
+}
+
+.cont-slide{
+
+    width:84%;
+    height: auto;
+    margin: auto;
+    background-color: #D8D816;
+    position: absolute;
+    padding-top: 40px;
+    
+}
+.btn{
+    float: left;
+    
+}
+
+.mySlides{
+    transition:all 0.3s ease;
+}
+
+.contenedorslide{
+    
+    width: auto;
+    height: 500px;
+   /*  margin:auto; */
+}
+
+
+
+
+/* FOOTER */
+.footer{
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 3/4;
+    width: 100%;
+    height: auto; 
+    background-color: #330033;
+} 

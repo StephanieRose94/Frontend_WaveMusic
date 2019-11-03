@@ -1,0 +1,47 @@
+<div class="headerRegistro">
+    <img src="../../../assets/img/botones/logoWave_azul.png" width="200px" height="60px">
+    <input type="email" class="textoInciarSesion" placeholder="correo electrónico">
+    <input type="password" class="textoCrearCuenta" placeholder="contraseña">
+    <button class="botonEntrar">Iniciar Sesión</button>
+</div>
+
+<div class="contenidoFormulario">
+    <div class="formulario">
+        <h3>Registrate</h3>
+
+        <form [formGroup]="registerForm" (ngSubmit)="enviar(registerForm.value)">
+
+            <input id="name" formControlName="name" type="text" placeholder="Nombre de usuario">
+            <small class="error"
+                *ngIf="registerForm.get('name').hasError('required') && registerForm.get('name').touched ">Nombre
+                requerido</small>
+
+            <input id="email" formControlName="email" type="email" placeholder="ejemplo@gmail.com">
+            <small class="error"
+                *ngIf="registerForm.get('email').hasError('required') && registerForm.get('email').touched ">Email
+                requerido</small>
+
+            <input id="password" formControlName="password" type="password" placeholder="Contraseña">
+            <small class="error"
+                *ngIf="registerForm.get('password').hasError('required') && registerForm.get('password').touched ">Contraseña
+                requerida</small>
+
+            <button class="aceptar" [disabled]="registerForm.invalid" type="submit"> Registrate </button>
+
+        </form>
+    </div>
+</div>
+<!-- <div class="contenido">
+    <div class="formulario">
+        <h3>Registrate</h3>
+        <form>
+            <input type="text" placeholder="Nombre de usuario">
+            <input type="password" placeholder="Contraseña">
+            <input type="email" placeholder="ejemplo@gmail.com">
+            <button class="cancelar">Cancelar</button>
+            <button class="aceptar">Aceptar</button>
+        </form>
+    </div>
+</div> -->
+
+<div class="footerRegistro"></div>

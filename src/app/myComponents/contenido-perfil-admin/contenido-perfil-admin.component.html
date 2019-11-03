@@ -1,0 +1,58 @@
+<div class="contenedor">
+    <div class="menu">
+        <div class="perfil">
+            <img>
+            <p>Bienvenida</p>
+        </div>
+
+        <div class="ventanas">
+            <div class="pagina"><a routerLink="/tendencias" routerLinkActive="active">Tendencias</a></div>
+            <div class="pagina"><a routerLink="/sugerencias" routerLinkActive="active">Sugerencias</a></div>
+            <div class="pagina"><a routerLink="/milista" routerLinkActive="active">Mi lista</a></div>
+            <div class="pagina2">Karaoke</div>
+        </div>
+    </div>
+
+
+    <div class="headerBlancoUsuario">
+        <div class="barraHeader">
+            <div class="historialHeader"></div>
+            <!--  <div class="flechasHeader"><img src="../../../assets/img/botones/flechasHeader.png" width="90px"
+                    height="40px">
+            </div> -->
+            <!--   <input class="buscadorHeader" placeholder="¿Qué quieres escuchar hoy?"> -->
+        </div>
+        <div class="titlePerfilUsuario">Base de datos: agregar</div>
+    </div>
+
+
+    <div class="contenidoPerfilAdmin">
+        <div class="encabezadoContenidoAdmin">
+            <input class="buscadorLocalAdmin" placeholder="¿Qué canción buscas?">
+            <button class="botonAgregarAdmin"><a routerLink="/admin/agregar" routerLinkActive="active">Agregar canción</a></button>
+         </div>
+
+        <div class="listaTareasSongs">
+            <div class="titleListAdmin">
+                <h4>Canción</h4>
+                <h4>Artista</h4>
+                <h4>Duración</h4>
+            </div>
+
+            <div class="databaseListAdmin">
+                <div class="databaseSong" *ngFor = 'let cancion of listaDeCanciones.canciones'>
+                   <!--  <div class="databaseSong" *ngFor='let base of songs' *ngFor = 'let cancion of listaDeCanciones.canciones'> -->
+                    <div class="botonEditSong"><img src="../../../assets/img/botones/puntosGrises.png" width="20px" height="50px"
+                            (click)="EditarCancion(base)"></div>
+                    <img class="imgSong" [src]="cancion.album">
+                    <div class="nameSong">{{cancion.titulo}}</div>
+                    <div class="nameArtist">{{cancion.artista}}</div>
+                    <div class="durationSong">{{cancion.duracion}}</div>
+                    <button class="botonDeleteSong"><img src="../../../assets/img/botones/botonEliminar.png"
+                            (click)="borrarCancion(cancion._id)"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

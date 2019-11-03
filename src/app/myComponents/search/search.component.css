@@ -1,0 +1,12 @@
+.buscadorHeader{
+    width: 360px;
+    height: 35px;
+    margin-top: 15px;
+    background-color: #303060;
+    border-radius: 20px;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 19px;
+    text-align: center;
+    border-style: none;
+}

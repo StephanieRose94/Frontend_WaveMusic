@@ -1,0 +1,28 @@
+/* REPRODUCTOR */
+.contenidoReproductor{
+    display: grid;
+    grid-column: 1/3;
+    grid-row: 3/4;
+    width: 100%;
+    height: 150px;
+    background-color: #0F0033;
+    z-index: 3;
+
+    grid-template-columns: 25% 50% 25%;
+    align-items: center;
+}
+.botonesReproductor{
+    display: flex;
+    grid-column: 2/3;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.botonesReproductor>img{
+    display: flex;
+    margin: auto;
+}
+.botonesReproductor>button{
+    border-style: none;
+    background-color: #0F0033;
+    height: auto;
+}

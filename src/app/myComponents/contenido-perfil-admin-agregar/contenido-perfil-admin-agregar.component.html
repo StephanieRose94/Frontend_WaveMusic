@@ -1,0 +1,90 @@
+<div class="contenedor">
+    <div class="headerBlancoUsuario">
+        <div class="barraHeader">
+            <div class="historialHeader"></div>
+        </div>
+        <div class="titlePerfilUsuario">Base de datos: agregar</div>
+    </div>
+
+
+    <div class="menu">
+        <div class="perfil">
+            <img>
+            <p>Bienvenida</p>
+        </div>
+
+        <div class="ventanas">
+            <div class="pagina"><a routerLink="/tendencias" routerLinkActive="active">Tendencias</a></div>
+            <div class="pagina"><a routerLink="/sugerencias" routerLinkActive="active">Sugerencias</a></div>
+            <div class="pagina"><a routerLink="/milista" routerLinkActive="active">Mi lista</a></div>
+            <div class="pagina3">Karaoke</div>
+        </div>
+    </div>
+
+
+<div class="contenidoAgregarAdmin">
+ 
+        <button class="botonRegresarAdmin"><a routerLink="/admin" routerLinkActive="active"><img src="../../../assets/img/botones/salir.png" width="50px" height="50px"></a></button>
+
+    <form class="bloqueContenido" [formGroup]=agregarForm (ngSubmit)="enviar(agregarForm.value)">
+         
+        <div class="agregarNombre">
+             <h4 class="titleAgregarNombre">Canción</h4>
+             <input class="cuadradoAgregarNombre" formControlName="titulo" type="text" placeholder="Escribe el nombre de la canción">
+             <small class="error" *ngIf= "agregarForm.get('titulo').hasError('required') && agregarForm.get('titulo').touched ">Nombre requerido</small>
+            </div>
+       
+       <div class="agregarArtista">
+             <h4 class="titleAgregarArtista">Artista</h4>
+             <input class="cuadradoAgregarArtista" formControlName="artista" type="text" placeholder="Escribe el nombre de la canción">
+             <small class="error" *ngIf= "agregarForm.get('artista').hasError('required') && agregarForm.get('artista').touched ">Artista requerido</small>
+            </div>
+
+       <div class="agregarDuration">
+             <h4 class="titleAgregarDuration">Duration</h4>
+             <input class="cuadradoAgregarDuration" formControlName="duracion" type="text" placeholder="Arrastra el mp3 aquí">
+             <small class="error" *ngIf= "agregarForm.get('duracion').hasError('required') && agregarForm.get('duracion').touched ">Mp3 requerida</small>
+        </div>
+
+        <div class="agregarGenero">
+            <h4 class="titleAgregarGenero">Genero</h4>
+            <input class="cuadradoAgregarGenero" formControlName="genero" type="text" placeholder="Arrastra el mp3 aquí">
+            <small class="error" *ngIf= "agregarForm.get('genero').hasError('required') && agregarForm.get('genero').touched ">Mp3 requerida</small>
+       </div>
+
+       <div class="agregarImage">
+        <h4 class="titleAgregarImage">Image</h4>
+        <input class="cuadradoAgregarImage" formControlName="album" type="text" placeholder="Arrastra el mp3 aquí">
+        <small class="error" *ngIf= "agregarForm.get('album').hasError('required') && agregarForm.get('album').touched ">Mp3 requerida</small>
+   </div>
+
+        <div class="agregarSong">
+            <h4 class="titleAgregarSong">Mp3</h4>
+            <input class="cuadradoAgregarSong" formControlName="src" type="text" placeholder="Arrastra el mp3 aquí">
+            <small class="error" *ngIf= "agregarForm.get('src').hasError('required') && agregarForm.get('src').touched ">Mp3 requerida</small>
+       </div>
+
+     
+       <!--   <label>Titulo:</label>
+    <input formControlName="titulo" type="text">
+    <br>
+    <label>Artista:</label>
+    <input formControlName="artista" type="text">
+    <br>
+    <label>Duracion:</label>
+    <input formControlName="duracion" type="text">
+    <br>
+    <label>Genero:</label>
+    <input formControlName="genero" type="text">
+    <br>
+    <label>Album:</label>
+    <input formControlName="album" type="text">
+    <br>
+    <label>Src:</label>
+    <input formControlName="src" type="text">
+    <br> -->
+
+       <button [disabled]="agregarForm.invalid" class="botonAgregarBase" type="submit">Agregar canción</button>
+    </form>
+ </div> 
+

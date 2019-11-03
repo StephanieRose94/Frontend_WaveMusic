@@ -1,0 +1,292 @@
+.contenedor{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    grid-template-rows: 300px auto 80px;
+    }
+
+
+/* MENU */
+.menu{
+    display: grid;
+    grid-column: 1/2;
+    grid-row: 1/4;
+    width: 100%;
+    height: auto;  
+    background-color: #E50033;
+
+    grid-template-rows: 300px 300px;
+    }
+.perfil{
+    display: grid;
+    width: 100%;
+    height: auto;  
+    grid-row: 1/2;
+    justify-content: center;
+    padding-top: 40px;
+}
+.perfil>img{
+    display: grid;
+    width: 120px;
+    height: 120px;  
+    border-radius: 100px;
+    background-color: white;
+}
+.perfil>p{
+    display: grid;  
+    height: 70px;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.ventanas{
+    display: grid;
+    width: 100%;
+    height: auto;  
+    grid-row: 2/3;
+}
+.pagina{
+    display: grid;
+    width: 90%;
+    height: 65px;
+    color: #E50033;
+    background-color: #660033;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    text-align: center;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 23px;
+}
+.pagina2{
+    display: grid;
+    width: 90%;
+    height: 65px;
+    color: #E50033;
+    background-color: #0F0033;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    text-align: center;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 23px;
+}
+.paginaSeleccionada{
+    display: grid;
+    width: 90%;
+    height: 65px;
+    margin-left: 10%;
+    padding-left: 30px;
+    color: #E50033;
+    background-color: white;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 23px;
+}
+
+
+
+/* HEADER BLANCO USUARIO */
+.headerBlancoUsuario{
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    width: 100%;
+    height: auto;  
+    margin-bottom: 20px;
+}
+.barraHeader{
+    display: grid;
+    width: 100%;
+    height: 70px;
+    grid-template-columns: 55% 10% 35%;
+}
+.historialHeader{
+    display: grid;
+    grid-column: 1/2;
+    color: white;
+    height: 40px;
+    margin-top: 30px;
+    margin-left: 30px;
+    font-family: 'Raleway', sans-serif;
+    font-style: italic;
+    font-size: 16px;
+}
+.flechasHeader{
+    display: grid;
+    grid-column: 2/3;
+    justify-content: center;
+    align-items: center;
+}
+.buscadorHeader{
+    display: grid;
+    width: 360px;
+    height: 35px;
+    margin-top: 15px;
+    grid-column: 3/4;
+    background-color: #303060;
+    border-radius: 20px;
+    color: #8484A0;
+    font-family: 'Lato', sans-serif;
+    font-size: 19px;
+    text-align: center;
+    border-style: none;
+}
+.titlePerfilUsuario{
+    display: grid;
+    font-family: 'Lato', sans-serif;
+    font-size: 72px;
+    font-weight: bolder;
+    color: #080633;
+    padding-left: 50px;
+    margin-top: 100px;
+}
+
+
+/* CONTENIDO PERFIL ADMIN*/  
+.contenidoPerfilAdmin{
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    width: auto;
+    height: auto; 
+    background-color: #0F0033;
+
+    grid-template-rows: 80px auto ;
+}
+.encabezadoContenidoAdmin{
+    display: grid;
+    grid-row: 1/2;
+    width: 100%;
+
+    grid-template-columns: 35% 35% 26% 4%;
+}
+.buscadorLocalAdmin{
+    display: grid;
+    grid-column: 1/2;
+    width: 60%;
+    height: 40px;
+    margin: auto;
+    text-align: center;
+
+    border-radius: 15px;
+    background-color: #303060;
+    font-family: 'Lato', sans-serif;
+    font-size: 19px;
+    border-style: none;
+    color: white;
+}
+.botonAgregarAdmin{
+    display: grid;
+    grid-column: 3/4;
+    width: 70%;
+    height: 40px;
+    margin: auto;
+    /* margin-left: 23%;
+    margin-top: 20px; */
+    text-align: center;
+    align-items: center;
+
+    border-radius: 15px;
+    background-color: #E50033;
+    font-family: 'Lato', sans-serif;
+    font-size: 19px;
+    color: white;
+    border-style: none;
+}
+.listaTareasSongs{
+    display: grid;
+    grid-row: 2/3;
+    width: 100%;
+    height: auto;
+
+    grid-template-rows: 100px auto;
+}
+.titleListAdmin{
+    display: grid;
+    grid-row: 1/2;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: inherit;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-family: 'Lato', sans-serif;
+    font-size: 28px;
+    color: white;
+}
+.databaseListAdmin{
+    display: grid;
+    grid-row: 2/3;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    margin: 0px;
+}
+.databaseSong{
+    display: grid;
+    width: 1100px;
+    height: 70px;
+    background-color: #F2F2F2;
+    margin-bottom: 20px;
+
+    grid-template-columns: 5% 2% 9% 26% 25% 23% 5%;
+}
+.botonEditSong{
+    display: grid;
+    width: auto;
+    grid-column: 2/3;
+    align-items: center;
+}
+.imgSong{
+    display: grid;
+    width: 50%;
+    height: 50px;
+    grid-column: 3/4;
+    background-color: #E50033;
+    margin: auto;
+    border-radius: 20px;
+}
+.nameSong{
+    display: grid;
+    width: auto;
+    grid-column: 4/5;
+    align-items: center;
+    color: #660033;
+    font-family: 'Lato', sans-serif;
+    font-size: 19px;
+    font-style: italic;
+}
+.nameArtist{
+    display: grid;
+    width: auto;
+    grid-column: 5/6;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Raleway', sans-serif;
+    color: #660033;
+    font-size: 19px;
+    font-style: italic;
+}
+.durationSong{
+    display: grid;
+    width: auto;
+    grid-column: 6/7;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Raleway', sans-serif;
+    color: #660033;
+    font-size: 19px;
+    font-style: italic;
+}
+.botonDeleteSong{
+    display: grid;
+    width: auto;
+    grid-column: 7/8;
+    align-items: center;
+}

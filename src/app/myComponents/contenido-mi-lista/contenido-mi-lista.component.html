@@ -1,0 +1,100 @@
+<div class="contenedor">
+  <div class="menu">
+    <div class="perfil">
+      <img>
+      <p>Bienvenida</p>
+    </div>
+
+    <div class="ventanas">
+      <div class="pagina"><a routerLink="/tendencias" routerLinkActive="active">Tendencias</a></div>
+      <div class="pagina"><a routerLink="/sugerencias" routerLinkActive="active">Sugerencias</a></div>
+      <div class="paginaSeleccionada"><a routerLink="/milista" routerLinkActive="active">Mi lista</a></div>
+      <div class="pagina2">Karaoke</div>
+    </div>
+  </div>
+
+  <div class="header">
+    <div class="barraHeader">
+      <div class="historialHeader">Sugerencias</div>
+      <div class="flechasHeader"><img src="../../../assets/img/botones/flechasHeader.png" width="90px" height="40px">
+      </div>
+      
+      <search class="search" (search)="handleSearch($event)"></search>
+      <div class="contendorResultadoSearch">
+        <ul>
+          <!-- adaptar a la base de datos con el Pipe -->
+          <li *ngFor="let usuario of usuarios | filter:filtro_valor">{{usuario.name}}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="slider">
+      <ul>
+        <li>
+          <img src="../../../assets/img/Slider/slider1.png" />
+        </li>
+        <li>
+          <img src="../../../assets/img/Slider/slider2.png" />
+        </li>
+        <li>
+          <img src="../../../assets/img/Slider/slider3.png" />
+        </li>
+        <li>
+          <img src="../../../assets/img/Slider/Slider4.png" />
+        </li>
+        <li>
+          <img src="../../../assets/img/Slider/Slider5.png" />
+        </li>
+        <li>
+          <img src="../../../assets/img/Slider/slider6.png" />
+        </li>
+        <li>
+          <img src="../../../assets/img/Slider/slider7.png" />
+        </li>
+        <li>
+          <img src="../../../assets/img/Slider/slider8.png" />
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="contenido">
+    <div class="sectionCanciones">
+
+      <div class="parte1">
+        <div class="titulo">Canciones</div>
+        <input class="buscador" placeholder="¿Qué canción buscas?">
+      </div>
+
+      <div class="parte2">
+        <div class="cuadrado" *ngFor='let genero of album1'>
+          <!-- <div class="puntosPequenos"><img src="Images/puntosGrises.png" width="20px" height="auto"></div> -->
+          <img [src]="genero.img" [alt]="genero.id" (click)='reproducir(cancion)'>
+          <div class="informacion">
+            <h4>{{genero.Cancion}}</h4>
+            <p>{{genero.artista}}</p>
+          </div>
+          <button id="botonMegusta" class="botonMegusta" (click)="Like(genero)"
+            *ngIf="genero.like === false; then press else nopress"></button>
+
+          <ng-template #press>
+            <div id="botonMegusta" class="botonMegusta" (click)="Like(genero)"><img
+                src="../../../assets/img/botones/botonDeslike.png" width="auto" height="40px"></div>
+          </ng-template>
+
+          <ng-template #nopress>
+            <div id="botonMegusta" class="botonMegusta" (click)="Like(genero)"><img
+                src="../../../assets/img/botones/botonLike.png" width="auto" height="40px"></div>
+          </ng-template>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="footer"></div>
+</div>

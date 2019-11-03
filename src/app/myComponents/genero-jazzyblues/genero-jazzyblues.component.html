@@ -1,0 +1,81 @@
+<div class="contenedor">
+        <div class="menu">
+            <div class="perfil">
+                <img>
+                <p>Bienvenida</p>
+            </div>
+    
+            <div class="ventanas">
+                <div class="paginaSeleccionada"><a routerLink="/tendencias" routerLinkActive="active">Tendencias</a></div>
+                <div class="pagina"><a routerLink="/sugerencias" routerLinkActive="active">Sugerencias</a></div>
+                <div class="pagina"><a routerLink="/milista" routerLinkActive="active">Mi lista</a></div>
+                <div class="pagina2">Karaoke</div>
+            </div>
+        </div>
+    
+        <div class="headerBlancoUsuario">
+            <div class="barraHeader">
+                <div class="historialHeader"></div>
+                <div class="flechasHeader"><img src="../../../assets/img/botones/flechasHeader.png" width="90px"
+                        height="40px">
+                </div>
+                <input class="buscadorHeader" placeholder="¿Qué quieres escuchar hoy?">
+            </div>
+            <div class="sliderAlbum"></div>
+        </div>
+    
+        <div class="contenido">
+            <div class="sectionCanciones">
+    
+                <div class="parte0">
+    
+                    <div class="contenidoReproductor">
+                        <div class="imgSongReproductor"></div>
+                        <div class="botonesReproductor">
+                            <button (click)='prev()'><img src="../../../assets/img/botones/botonPreview.png"></button>
+                            <button onclick="document.querySelector('audio').play()"><img
+                                    src="../../../assets/img/botones/botonPlay.png"></button>
+                            <button onclick="document.querySelector('audio').pause()"><img
+                                    src="../../../assets/img/botones/botonPausa.png"></button>
+                            <button (click)='next()'><img src="../../../assets/img/botones/botonNext.png"></button>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+    
+            <div class="parte1">
+                <div class="titulo"></div>
+                <input class="buscador" placeholder="¿Qué canción buscas?">
+            </div>
+    
+            <div class="parte2">
+                <div class="cuadrado" *ngFor='let genero of album1'>
+                    <!-- <div class="puntosPequenos"><img src="Images/puntosGrises.png" width="20px" height="auto"></div> -->
+                    <img [src]="genero.img" [alt]="genero.id" (click)='reproducir(cancion)'>
+                    <div class="informacion">
+                        <h4>{{genero.Cancion}}</h4>
+                        <p>{{genero.artista}}</p>
+                    </div>
+                    <button id="botonMegusta" class="botonMegusta" (click)="Like(genero)"
+                        *ngIf="genero.like === false; then press else nopress"></button>
+    
+                    <ng-template #press>
+                        <div id="botonMegusta" class="botonMegusta" (click)="Like(genero)"><img
+                                src="../../../assets/img/botones/botonDeslike.png" width="auto" height="40px"></div>
+                    </ng-template>
+    
+                    <ng-template #nopress>
+                        <div id="botonMegusta" class="botonMegusta" (click)="Like(genero)"><img
+                                src="../../../assets/img/botones/botonLike.png" width="auto" height="40px"></div>
+                    </ng-template>
+    
+                </div>
+            </div>
+    
+        </div>
+    
+    
+    
+        <div class="footer"></div>
+    </div>

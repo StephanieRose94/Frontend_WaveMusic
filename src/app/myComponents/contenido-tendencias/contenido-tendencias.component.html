@@ -1,0 +1,235 @@
+<div class="contenedor">
+    <div class="menu">
+        <div class="perfil">
+            <img>
+            <p>Bienvenida</p>
+        </div>
+
+        <div class="ventanas">
+            <div class="paginaSeleccionada"><a routerLink="/tendencias" routerLinkActive="active">Tendencias</a></div>
+            <div class="pagina"><a routerLink="/sugerencias" routerLinkActive="active">Sugerencias</a></div>
+            <div class="pagina"><a routerLink="/milista" routerLinkActive="active">Tu lista</a></div>
+            <div class="pagina2">Karaoke</div>
+        </div>
+    </div>
+
+    <div class="header">
+        <div class="barraHeader">
+            <div class="historialHeader">Sugerencias</div>
+            <div class="flechasHeader"><img src="../../../assets/img/botones/flechasHeader.png" width="90px" height="40px"></div>
+         
+            <search class="search" (search)="handleSearch($event)"></search>
+            <div class="contendorResultadoSearch">
+              <ul>
+                <!-- adaptar a la base de datos con el Pipe -->
+                <li *ngFor="let usuario of usuarios | filter:filtro_valor">{{usuario.name}}</li>
+              </ul>
+            </div>
+        </div>
+        <div class="slider">
+                <ul>
+                  <li>
+                    <img src="../../../assets/img/Slider/slider1.png" />
+                  </li>
+                  <li>
+                    <img src="../../../assets/img/Slider/slider2.png" />
+                  </li>
+                  <li>
+                    <img src="../../../assets/img/Slider/slider3.png" />
+                  </li>
+                  <li>
+                    <img src="../../../assets/img/Slider/Slider4.png" />
+                  </li>
+                  <li>
+                    <img src="../../../assets/img/Slider/Slider5.png" />
+                  </li>
+                  <li>
+                    <img src="../../../assets/img/Slider/slider6.png" />
+                  </li>
+                  <li>
+                    <img src="../../../assets/img/Slider/slider7.png" />
+                  </li>
+                  <li>
+                    <img src="../../../assets/img/Slider/slider8.png" />
+                  </li>
+                </ul>
+           </div>
+  
+      </div>
+
+
+    <!-- CONTENIDO TENDENCIAS -->
+    <div class="contenedorTendencias">
+        <div class="contenedorslide">
+            <div class="nom-slide">
+                <h1>POP</h1>
+            </div>
+
+            <div class="cont-slide">
+                <button class="btn" (click)="boton1(display)">&#10094;</button>
+
+                <div class="mySlides">
+                    <div *ngIf="isValid">
+                        <div class="sli" *ngFor="let genero of slide">
+                            <img [src]="genero.img" (click)="reproducir(cancion)" />
+                            <br />
+                            <h3>{{ genero.album }}</h3>
+                            <p>{{ genero.artista }}</p>
+                        </div>
+                    </div>
+
+                    <div *ngIf="noisValid">
+                        <div class="sli" *ngFor="let genero of slide1">
+                            <img [src]="genero.img" (click)="reproducir(cancion)" />
+                            <br />
+                            <h3>{{ genero.album }}</h3>
+                            <p>{{ genero.artista }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn" (click)="boton(display)">&#10095;</button>
+            </div>
+        </div>
+
+
+        <!-- --------SLIDE 2------------- -->
+
+        <div class="contenedorslide">
+            <div class="nom-slide">
+                <h1>ROCK</h1>
+            </div>
+
+            <div class="cont-slide">
+                <button class="btn" (click)="boton12(display)">&#10094;</button>
+
+                <div class="mySlides">
+                    <div *ngIf="isValid2">
+                        <div class="sli" *ngFor="let genero of slide2">
+                            <img [src]="genero.img" (click)="reproducir(cancion)" />
+                            <br />
+                            <h3>{{ genero.album }}</h3>
+                            <p>{{ genero.artista }}</p>
+                        </div>
+                    </div>
+
+                    <div *ngIf="noisValid2">
+                        <div class="sli" *ngFor="let genero of slide12">
+                            <img [src]="genero.img" (click)="reproducir(cancion)" />
+                            <br />
+                            <h3>{{ genero.album }}</h3>
+                            <p>{{ genero.artista }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn" (click)="boton2(display)">&#10095;</button>
+            </div>
+        </div>
+
+
+        <!-- --------SLIDE 3------------- -->
+
+        <div class="contenedorslide">
+            <div class="nom-slide">
+                <h1>LATINO</h1>
+            </div>
+
+            <div class="cont-slide">
+                <button class="btn" (click)="boton13(display)">&#10094;</button>
+
+                <div class="mySlides">
+                    <div *ngIf="isValid3">
+                        <div class="sli" *ngFor="let genero of slide3">
+                            <img [src]="genero.img" (click)="reproducir(cancion)" />
+                            <br />
+                            <h3>{{ genero.album }}</h3>
+                            <p>{{ genero.artista }}</p>
+                        </div>
+                    </div>
+
+                    <div *ngIf="noisValid3">
+                        <div class="sli" *ngFor="let genero of slide13">
+                            <img [src]="genero.img" [alt]="genero.id" (click)="reproducir(cancion)" />
+                            <br />
+                            <h3>{{ genero.album }}</h3>
+                            <p>{{ genero.artista }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn" (click)="boton3(display)">&#10095;</button>
+            </div>
+        </div>
+
+        <!-- ----------SLIDE 4----------- -->
+
+        <div class="contenedorslide">
+            <div class="nom-slide">
+                <h1>URBANO</h1>
+            </div>
+
+            <div class="cont-slide">
+                <button class="btn" (click)="boton14(display)">&#10094;</button>
+
+                <div class="mySlides">
+                    <div *ngIf="isValid4">
+                        <div class="sli" *ngFor="let genero of slide4">
+                            <img [src]="genero.img" (click)="reproducir(cancion)" />
+                            <br />
+                            <h3>{{ genero.album }}</h3>
+                            <p>{{ genero.artista }}</p>
+                        </div>
+                    </div>
+
+                    <div *ngIf="noisValid4">
+                        <div class="sli" *ngFor="let genero of slide14">
+                            <img [src]="genero.img" [alt]="genero.id" (click)="reproducir(cancion)" />
+                            <br />
+                            <h3>{{ genero.album }}</h3>
+                            <p>{{ genero.artista }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn" (click)="boton4(display)">&#10095;</button>
+            </div>
+        </div>
+
+        <!-- ---------SLIDE 5------------ -->
+
+        <div class="contenedorslide">
+            <div class="nom-slide">
+                <h1>JAZZ & BLUES</h1>
+            </div>
+
+            <div class="cont-slide">
+                <button class="btn" (click)="boton15(display)">&#10094;</button>
+
+                <div class="mySlides">
+                    <div *ngIf="isValid5">
+                        <div class="sli" *ngFor="let genero of slide5">
+                            <img [src]="genero.img" (click)="reproducir(cancion)" />
+                            <br />
+                            <h3>{{ genero.album }}</h3>
+                            <p>{{ genero.artista }}</p>
+                        </div>
+                    </div>
+
+                    <div *ngIf="noisValid5">
+                        <div class="sli" *ngFor="let genero of slide15">
+                            <img [src]="genero.img" [alt]="genero.id" (click)="reproducir(cancion)" />
+                            <br />
+                            <h3>{{ genero.album }}</h3>
+                            <p>{{ genero.artista }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn" (click)="boton5(display)">&#10095;</button>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer"></div>
+</div>
