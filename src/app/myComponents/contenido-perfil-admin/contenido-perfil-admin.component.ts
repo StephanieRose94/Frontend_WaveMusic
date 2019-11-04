@@ -27,6 +27,8 @@ export class ContenidoPerfilAdminComponent implements OnInit {
   obtenerCanciones(){
     this.cancionesservice.getCanciones().subscribe(res=>{
       this.listaDeCanciones = res.canciones
+      console.log(this.listaDeCanciones)
+      console.log(this.listaDeCanciones[0].src)
     })
   }
 
