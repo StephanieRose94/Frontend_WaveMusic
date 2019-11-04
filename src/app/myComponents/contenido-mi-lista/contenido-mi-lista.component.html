@@ -68,17 +68,16 @@
       </div>
 
       <div class="parte2">
-        <div class="cuadrado" *ngFor='let genero of album1'>
+        <div class="cuadrado" *ngFor='let genero of canciones'>
           <!-- <div class="puntosPequenos"><img src="Images/puntosGrises.png" width="20px" height="auto"></div> -->
-          <img [src]="genero.img" [alt]="genero.id" (click)='reproducir(cancion)'>
+          <img [src]="genero.album" [alt]="genero.id" (click)='reproducir(cancion)'>
           <div class="informacion">
-            <h4>{{genero.Cancion}}</h4>
+            <h4>{{genero.titulo}}</h4>
             <p>{{genero.artista}}</p>
           </div>
-          <button id="botonMegusta" class="botonMegusta" (click)="Like(genero)"
-            *ngIf="genero.like === false; then press else nopress"></button>
+          <div id="botonMegusta" class="botonMegusta" (click)="Like(genero)"><img src="../../../assets/img/botones/botonDeslike.png" width="auto" height="40px"></div>
 
-          <ng-template #press>
+          <!-- <ng-template #press>
             <div id="botonMegusta" class="botonMegusta" (click)="Like(genero)"><img
                 src="../../../assets/img/botones/botonDeslike.png" width="auto" height="40px"></div>
           </ng-template>
@@ -86,7 +85,7 @@
           <ng-template #nopress>
             <div id="botonMegusta" class="botonMegusta" (click)="Like(genero)"><img
                 src="../../../assets/img/botones/botonLike.png" width="auto" height="40px"></div>
-          </ng-template>
+          </ng-template> -->
 
         </div>
 

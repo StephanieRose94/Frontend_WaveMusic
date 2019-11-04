@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import {CancionesService} from '../../Servicios/canciones.service'
+import {CancionesService} from '../../Servicios/canciones.service';
+import {CancioneslikedService} from '../../Servicios/cancionesliked.service';
 import { from } from 'rxjs';
 
 
@@ -10,6 +11,9 @@ import { from } from 'rxjs';
   styleUrls: ['./genero-rock.component.css']
 })
 export class GeneroRockComponent implements OnInit {
+
+  cancionlikedpost = {album:"",artista:"",duracion:"",genero:"",src:"",titulo:""};
+  resultcancionlikedpost : any;
 
   canciones: any;
   
@@ -25,7 +29,7 @@ export class GeneroRockComponent implements OnInit {
   ]
   //album1:any;
 
-  constructor(public rest:CancionesService, private _http: HttpClient) {
+  constructor(public restliked:CancioneslikedService, public rest:CancionesService, private _http: HttpClient) {
 
   }
 
@@ -46,6 +50,27 @@ export class GeneroRockComponent implements OnInit {
   like=false
 
   Like(genero){
+    
+
+    this.cancionlikedpost.album = genero.album;
+    this.cancionlikedpost.artista = genero.artista;
+    this.cancionlikedpost.duracion = genero.duracion;
+    this.cancionlikedpost.genero = genero.genero;
+    this.cancionlikedpost.src = genero.src;
+    this.cancionlikedpost.titulo = genero.titulo;
+
+    this.restliked.crearCanciones(this.cancionlikedpost).subscribe((result) => {
+      // this.productData = result;
+       this.resultcancionlikedpost = result;
+       console.log(result);
+       //this.router.navigate(['/product-details/'+result._id]);
+     }, (err) => {
+       console.log(err);
+     });
+ 
+
+    console.log(this.cancionlikedpost)
+
     let index = this.album1.indexOf(genero)
     if(genero.like == false){
       genero.like = true

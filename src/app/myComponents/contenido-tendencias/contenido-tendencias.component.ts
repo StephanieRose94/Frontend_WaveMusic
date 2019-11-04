@@ -10,6 +10,9 @@ import { HttpClient } from "@angular/common/http";
 
 export class ContenidoTendenciasComponent implements OnInit {
 
+    local = {nombre:""};
+
+
     title = "sliders";
     slide = [
       {
@@ -395,6 +398,9 @@ export class ContenidoTendenciasComponent implements OnInit {
         .get("https://jsonplaceholder.typicode.com/users")
         .subscribe((users: any[]) => (this.usuarios = users));
       console.log(this.usuarios);
+
+      this.local.nombre = localStorage.getItem("nombreUsuarioLogeado")
+
     }
   }
   

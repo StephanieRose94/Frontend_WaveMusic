@@ -59,6 +59,8 @@ export class RegistroComponent implements OnInit {
   CompararPasswords(ingresado,leido){
     console.log(ingresado,leido)
 
+    localStorage.setItem("nombreUsuarioLogeado",leido.nombre)
+
     if (ingresado == leido.password){
 
       if(leido.role == "regular"){
