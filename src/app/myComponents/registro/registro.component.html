@@ -1,8 +1,8 @@
 <div class="headerRegistro">
     <img src="../../../assets/img/botones/logoWave_azul.png" width="200px" height="60px">
-    <input type="email" class="textoInciarSesion" placeholder="correo electrónico">
-    <input type="password" class="textoCrearCuenta" placeholder="contraseña">
-    <button class="botonEntrar">Iniciar Sesión</button>
+    <input type="email" class="textoInciarSesion" placeholder="correo electrónico" #email>
+    <input type="password" class="textoCrearCuenta" placeholder="contrasena" #contrasena>
+    <button class="botonEntrar" (click)="ValidarUsuario(email.value,contrasena.value)">Iniciar Sesión</button>
 </div>
 
 <div class="contenidoFormulario">

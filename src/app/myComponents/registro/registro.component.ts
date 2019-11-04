@@ -4,6 +4,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Usuarios } from "src/modulo/usuario.module";
 import { UserService } from "src/app/Servicios/usuarios.service";
+import {Router} from "@angular/router"
 
 @Component({
   selector: "registro",
@@ -14,13 +15,15 @@ export class RegistroComponent implements OnInit {
   /* listaUsuario: any = []; */
   //people: Usuarios[] = [];
   people= {nombre:"", correo:"", password:""};
+  usuario: any;
   //people: any
   /* constructor(private builder: FormBuilder,
             private equipo: EquipoService) { } */
 
   constructor(
     private builder: FormBuilder,
-    private usuariosservice: UserService
+    private usuariosservice: UserService,
+    private router: Router
   ) {}
   /* registerForm: FormGroup = this.builder.group({
     name: ["", Validators.required],
@@ -36,6 +39,47 @@ export class RegistroComponent implements OnInit {
   /*  getEquipo(): Observable<EquipoService[]>{
     return this.http.get<EquipoService[]>('https://jsonplaceholder.typicode.com/posts') // https://jsonplaceholder.typicode.com/posts
   } */
+
+  ValidarUsuario(email,contrasena){
+    console.log(email)
+    console.log(contrasena)
+
+    this.usuariosservice.getUsuario(email).subscribe((result) => {
+      // this.productData = result;
+       this.usuario = result;
+       //console.log(result);
+       console.log(this.usuario)
+       this.CompararPasswords(contrasena,this.usuario[0])
+       //this.router.navigate(['/product-details/'+result._id]);
+     }, (err) => {
+       console.log(err);
+     });
+  }
+
+  CompararPasswords(ingresado,leido){
+    console.log(ingresado,leido)
+
+    if (ingresado == leido.password){
+
+      if(leido.role == "regular"){
+        alert("Es un usuario regular")
+        this.router.navigate(['/tendencias'])
+      }
+      if(leido.role == "admin"){
+        alert("Es un Administrador")
+        this.router.navigate(['/admin'])
+      }
+
+
+    }else{
+      alert("Usuario o contraseña incorrecto, login failed");
+    }
+
+
+  }
+
+
+
 
   enviar(registerForm) {
     console.log(registerForm.name)
