@@ -27,6 +27,13 @@ export class CancionesService {
       map(this.extractData));
   }
 
+  /* Metodo GET para Usuario por NOMBRE*/
+  getCancionesTitulo(titulo): Observable<any>{
+    return this.http.get(this.url+"/titulo/"+titulo).pipe(
+      map(this.extractData));
+  }
+
+
    /* METODO POST*/
    crearCanciones(cancion){
      return this.http.post(this.url, cancion)

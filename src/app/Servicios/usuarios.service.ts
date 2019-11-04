@@ -21,6 +21,7 @@ export class UserService {
   getUsuarios(): Observable<Usuarios[]> {
     return this._http.get<Usuarios[]>(this.url);
   }
+  
   crearUsuarios(user):Observable<any> {
     console.log(user);
     return this._http.post(this.url, user);
